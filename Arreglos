@@ -1,0 +1,85 @@
+#include <iostream>
+
+using namespace std;
+
+void mostrar_arreglo(int arreglo[], int nro_elementos)
+
+{
+
+int i, menor, cont, temporal, j;
+menor = arreglo [0];
+cont = 0;
+for (i=0; i < nro_elementos; i++){
+    cont += arreglo[i];
+    if (arreglo[i] >= menor){
+        menor = arreglo[i];
+    }
+}
+cout << "orden ascendente" << endl;
+for (i=0; i < nro_elementos; i++){
+    for (j=i+1; j < nro_elementos; j++){
+        if (arreglo[i] > arreglo[j]){
+            temporal = arreglo[i];
+            arreglo[i] = arreglo[j];
+            arreglo[j] = temporal;
+            }
+    }
+
+cout << arreglo[i] << " ";
+}
+cout << endl << "orden descendente" << endl;
+for (i=0; i < nro_elementos; i++){
+    for (j=i+1; j < nro_elementos; j++){
+        if (arreglo[i] < arreglo[j]){
+            temporal = arreglo[i];
+            arreglo[i] = arreglo[j];
+            arreglo[j] = temporal;
+            }
+    }
+
+cout << arreglo[i] << " ";
+}
+cout << endl << "numeros perfectos" << endl;
+int contador, suma;
+for (i=0; i < nro_elementos; i++){
+        suma=0;
+    for (j=1; j < arreglo[i]/2; j++){
+        if (arreglo[i]%j==0){
+            suma += j;
+            }
+    }
+}
+        if (suma == arreglo[i]){
+            contador += 1;
+        }
+
+
+cout << "hay" << contador << "numeros perfectos" << endl;
+cout <<  endl << "suma: " << cont << " " << endl;
+cout << "el mayor es: " << menor << endl;
+cout << endl << "orden invertido" << endl;
+
+int temp;
+i=0;
+    while (i < nro_elementos)
+    {
+        int temp = arreglo[0];
+        arreglo[0] = arreglo[nro_elementos];
+        arreglo[nro_elementos] = temp;
+        i++;
+        nro_elementos--;
+        cout << arreglo[i] << " ";
+    }
+}
+
+main()
+
+{
+
+int nros_chicos[6] = {2, 6, 8, 3, 7, 28};
+
+mostrar_arreglo(nros_chicos, 6);
+
+
+
+}
